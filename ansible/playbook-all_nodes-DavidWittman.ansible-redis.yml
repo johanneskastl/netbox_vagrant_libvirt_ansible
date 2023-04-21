@@ -1,0 +1,9 @@
+---
+- name: 'Install redis'
+  hosts: 'all'
+  gather_facts: true
+  become: true
+
+  roles:
+    - role: 'DavidWittman.ansible-redis'
+      redis_bind: 127.0.0.1
