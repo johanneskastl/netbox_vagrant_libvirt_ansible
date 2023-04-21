@@ -13,3 +13,6 @@
 [submodule "ansible/roles/johanneskastl.reboot"]
 	path = ansible/roles/johanneskastl.reboot
 	url = https://github.com/johanneskastl/ansible-role-reboot.git
+[submodule "ansible/roles/linux-system-roles.postgresql"]
+	path = ansible/roles/linux-system-roles.postgresql
+	url = https://github.com/linux-system-roles/postgresql.git
