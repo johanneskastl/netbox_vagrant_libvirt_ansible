@@ -6,6 +6,9 @@
 - name: 'Run playbook-all_nodes-minimal_bashrc.yml'
   ansible.builtin.import_playbook: playbook-all_nodes-minimal_bashrc.yml
 
+- name: 'Run playbook-all_nodes-geerlingguy.yml'
+  ansible.builtin.import_playbook: playbook-all_nodes-geerlingguy.yml
+
 - name: 'Run playbook-all_nodes-linux-system-roles.postgresql.yml'
   ansible.builtin.import_playbook: playbook-all_nodes-linux-system-roles.postgresql.yml
 
