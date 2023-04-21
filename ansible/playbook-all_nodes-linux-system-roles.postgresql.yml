@@ -1,0 +1,11 @@
+---
+- name: 'Install postgresql using linux-system-roles.postgresql'
+  hosts: 'all'
+  gather_facts: true
+  become: true
+
+  roles:
+    - role: 'linux-system-roles.postgresql'
+      postgresql_version: '14'
+      postgresql_password: totallysecurepassword
+      ansible_pipelining: true
