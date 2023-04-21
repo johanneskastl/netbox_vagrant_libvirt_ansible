@@ -10,3 +10,6 @@
 [submodule "ansible/roles/johanneskastl.minimal_bashrc"]
 	path = ansible/roles/johanneskastl.minimal_bashrc
 	url = https://github.com/johanneskastl/ansible-role-minimal_bashrc.git
+[submodule "ansible/roles/johanneskastl.reboot"]
+	path = ansible/roles/johanneskastl.reboot
+	url = https://github.com/johanneskastl/ansible-role-reboot.git
