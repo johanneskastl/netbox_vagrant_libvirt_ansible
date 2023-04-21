@@ -1,0 +1,78 @@
+---
+- name: 'Configure the postgresql databse'
+  hosts: 'all'
+  gather_facts: true
+  become: true
+  # See: https://github.com/ansible/ansible/issues/16048#issuecomment-229012509
+  vars:
+    ansible_ssh_pipelining: true
+
+  tasks:
+
+    - name: Create the netbox user
+      community.postgresql.postgresql_user:
+        login_password: 'totallysecurepassword'
+        #
+        name: netbox
+        password: 'anothertotallysecurepassword'
+      become_user: postgres
+      notify:
+        - Restart postgresql
+
+    - name: Allow password logins for netbox user
+      community.postgresql.postgresql_pg_hba:
+        dest: /var/lib/pgsql/data/pg_hba.conf
+        contype: host
+        users: netbox
+        method: md5
+      become_user: postgres
+      notify:
+        - Restart postgresql
+
+    - name: Create the netbox database
+      community.postgresql.postgresql_db:
+        login_password: 'totallysecurepassword'
+        #
+        name: netbox
+        owner: netbox
+        encoding: UTF-8
+        lc_collate: en_US.UTF-8
+        lc_ctype: en_US.UTF-8
+        template: template0
+      become_user: postgres
+      notify:
+        - Restart postgresql
+
+    - name: Make the netbox user owner of the netbox database
+      community.postgresql.postgresql_owner:
+        login_password: 'totallysecurepassword'
+        #
+        db: netbox
+        new_owner: netbox
+      become_user: postgres
+      notify:
+        - Restart postgresql
+
+    - name: Grant all permissions on the netbox database
+      community.postgresql.postgresql_privs:
+        login_password: 'totallysecurepassword'
+        #
+        database: postgres
+        role: netbox
+        privs: ALL
+        obj: netbox
+        type: database
+      become_user: postgres
+      notify:
+        - Restart postgresql
+
+
+    - name: Flush handlers
+      ansible.builtin.meta: flush_handlers
+
+  handlers:
+
+    - name: Restart postgresql
+      ansible.builtin.service:
+        name: postgresql
+        state: restarted
