@@ -9,6 +9,11 @@
 
   tasks:
 
+    - name: Install python3-psycopg2
+      ansible.builtin.package:
+        name: python3-psycopg2
+        state: present
+
     - name: Create the netbox user
       community.postgresql.postgresql_user:
         login_password: 'totallysecurepassword'
