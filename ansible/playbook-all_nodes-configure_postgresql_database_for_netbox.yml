@@ -1,5 +1,5 @@
 ---
-- name: 'Configure the postgresql databse'
+- name: 'Configure the postgresql database'
   hosts: 'all'
   gather_facts: true
   become: true
