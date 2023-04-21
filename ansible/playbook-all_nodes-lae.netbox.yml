@@ -8,6 +8,16 @@
     - role: 'lae.netbox'
       netbox_stable: true
       netbox_stable_version: 3.4.7
+      #
+      netbox_socket: "{{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}:8000"
+      netbox_config:
+        ALLOWED_HOSTS:
+          - '127.0.0.1'
+          - hostvars[inventory_hostname]['ansible_default_ipv4']['address']
+        MEDIA_ROOT: "{{ netbox_shared_path }}/media"
+        REPORTS_ROOT: "{{ netbox_shared_path }}/reports"
+        SCRIPTS_ROOT: "{{ netbox_shared_path }}/scripts"
+      #
       netbox_install_epel: false
       netbox_superuser_enabled: true
       netbox_superuser_username: admin
@@ -16,7 +26,7 @@
       netbox_superuser_create_token: false
       netbox_database: netbox
       netbox_database_user: netbox
-      netbox_database_password: totallysecurepassword
+      netbox_database_password: anothertotallysecurepassword
       netbox_database_host: localhost
       netbox_database_port: 5432
       redis_bind: 127.0.0.1
