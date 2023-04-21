@@ -25,3 +25,6 @@
 [submodule "ansible/roles/johanneskastl.minimal_tmux_configuration"]
 	path = ansible/roles/johanneskastl.minimal_tmux_configuration
 	url = https://github.com/johanneskastl/ansible-role-minimal_tmux_configuration.git
+[submodule "ansible/roles/jvoss.netbox"]
+	path = ansible/roles/jvoss.netbox
+	url = https://github.com/jvoss/ansible-role-netbox
