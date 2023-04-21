@@ -16,3 +16,6 @@
 [submodule "ansible/roles/linux-system-roles.postgresql"]
 	path = ansible/roles/linux-system-roles.postgresql
 	url = https://github.com/linux-system-roles/postgresql.git
+[submodule "ansible/roles/geerlingguy.redis"]
+	path = ansible/roles/geerlingguy.redis
+	url = https://github.com/geerlingguy/ansible-role-redis.git
