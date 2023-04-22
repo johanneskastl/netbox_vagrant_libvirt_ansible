@@ -28,3 +28,6 @@
 [submodule "ansible/roles/jvoss.netbox"]
 	path = ansible/roles/jvoss.netbox
 	url = https://github.com/jvoss/ansible-role-netbox
+[submodule "ansible/roles/caddy_ansible.caddy_ansible"]
+	path = ansible/roles/caddy_ansible.caddy_ansible
+	url = https://github.com/caddy-ansible/caddy-ansible.git
