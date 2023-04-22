@@ -1,0 +1,17 @@
+---
+- name: 'Install and configure caddy'
+  hosts: 'all'
+  gather_facts: true
+  become: true
+
+  roles:
+    - role: 'caddy_ansible.caddy_ansible'
+      caddy_config: |
+        :8080 {
+          route /static* {
+            uri strip_prefix /static
+            root * /opt/netbox/current/netbox/static
+            file_server
+          }
+          reverse_proxy http://127.0.0.1:8001
+        }
