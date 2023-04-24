@@ -19,9 +19,6 @@
 [submodule "ansible/roles/geerlingguy.redis"]
 	path = ansible/roles/geerlingguy.redis
 	url = https://github.com/geerlingguy/ansible-role-redis.git
-[submodule "ansible/roles/lae.netbox"]
-	path = ansible/roles/lae.netbox
-	url = https://github.com/lae/ansible-role-netbox.git
 [submodule "ansible/roles/johanneskastl.minimal_tmux_configuration"]
 	path = ansible/roles/johanneskastl.minimal_tmux_configuration
 	url = https://github.com/johanneskastl/ansible-role-minimal_tmux_configuration.git
