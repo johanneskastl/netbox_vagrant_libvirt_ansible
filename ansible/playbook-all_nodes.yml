@@ -20,3 +20,9 @@
 
 - name: 'Run playbook-all_nodes-configure_postgresql_database_for_netbox.yml'
   ansible.builtin.import_playbook: playbook-all_nodes-configure_postgresql_database_for_netbox.yml
+
+- name: 'Run playbook-all_nodes-jvoss.netbox.yml'
+  ansible.builtin.import_playbook: playbook-all_nodes-jvoss.netbox.yml
+
+- name: 'Run playbook-all_nodes-caddy_ansible.caddy_ansible.yml'
+  ansible.builtin.import_playbook: playbook-all_nodes-caddy_ansible.caddy_ansible.yml
