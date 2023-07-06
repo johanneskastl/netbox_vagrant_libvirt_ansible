@@ -12,7 +12,6 @@ beware that this will break the Ansible provisioning.
    generic/fedora37`.
 1. Make sure the git submodules are fully working by issuing `git submodule init
    && git submodule update`
-   `ansible-playbook ansible/playbook-localhost-selfsigned_demo_ca.yml`
 1. Run `vagrant up`
 1. Find out the VM's IP (e.g. `vagrant address netbox`, if you have vagrant
    address installed) and connect to IP:8080.
